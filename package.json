@@ -1,0 +1,23 @@
+{
+	"name": "bloglist-root",
+	"private": true,
+	"version": "1.0.0",
+	"scripts": {
+		"dev:backend": "npm --prefix bloglist-backend run dev",
+		"dev:frontend": "npm --prefix bloglist-frontend run dev",
+		"dev:full": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+		"test:backend": "npm --prefix bloglist-backend test",
+		"test:frontend": "npm --prefix bloglist-frontend test",
+		"test:playwright": "playwright test --project=chromium --project=firefox",
+		"test": "npm run test:backend && npm run test:frontend && npm run test:playwright",
+		"lint": "npm --prefix bloglist-frontend run lint"
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.60.0",
+		"@types/node": "^25.9.1",
+		"concurrently": "^9.2.1"
+	},
+	"dependencies": {
+		"playwright": "^1.60.0"
+	}
+}
